@@ -1,0 +1,31 @@
+{
+  "jshint": {
+    "options": {
+      "newcap": false
+    },
+    "global": ["window", "Crafty", "console"]
+  },
+  "exec": {
+    "afterSave": {
+      "**/components/*.js": "copy /y /b components\\*.js scripts\\components.js",
+      "**/entities/*.js": "copy /y /b entities\\*.js scripts\\entities.js"
+    },
+    "onKeys": {
+      "ctrl+alt+g": {
+        "cmd": "git st",
+        "cwd": "${dir}",
+        "name": "Git Status"
+      },
+      "ctrl+alt+c": {
+        "cmd": "git commit -a",
+        "cwd": "${dir}",
+        "name": "Git Commit"
+      },
+      "ctrl+alt+p": {
+        "cmd": "git push origin master",
+        "cwd": "${dir}",
+        "name": "Git Push"
+      }
+    }
+  }
+}
